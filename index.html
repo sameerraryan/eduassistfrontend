@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EduAssist - AI Teacher Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <span class="logo">EduAssist</span>
+            <nav>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#ai-assist">AI Tools</a>
+                <a href="#attendance">Attendance</a>
+                <a href="#assignments">Assignments</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="dashboard">
+            <h1>Welcome, Teacher 👩‍🏫</h1>
+            <h2>Teacher Support Dashboard</h2>
+            <div class="card-container">
+                <div class="card premium-shadow">
+                    <h3>AI Lesson Generator</h3>
+                    <input type="text" id="lesson-topic" placeholder="Topic">
+                    <button onclick="generateLesson()">Generate</button>
+                    <div id="lesson-result"></div>
+                </div>
+                <div class="card premium-shadow">
+                    <h3>AI Quiz Generator</h3>
+                    <input type="text" id="quiz-topic" placeholder="Topic">
+                    <button onclick="generateQuiz()">Generate</button>
+                    <div id="quiz-result"></div>
+                </div>
+                <div class="card premium-shadow">
+                    <h3>Attendance Marking</h3>
+                    <input type="text" id="student-name" placeholder="Student Name">
+                    <button onclick="markAttendance()">Mark Present</button>
+                    <div id="attendance-list"></div>
+                </div>
+                <div class="card premium-shadow">
+                    <h3>Assignments Portal</h3>
+                    <input type="text" id="assignment-title" placeholder="Assignment Title">
+                    <button onclick="addAssignment()">Add</button>
+                    <ul id="assignment-list"></ul>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <h3>About EduAssist</h3>
+            <p>
+                EduAssist is an AI-powered platform that helps teachers with lesson/quiz creation, attendance, assignments, and more. <br>
+                <b>Founders:</b> Sameer Aryan, Shourya Gupta, Aman Kumar Sharma, Akshay Kataria
+            </p>
+        </section>
+    </main>
+    <footer>
+        <span>&copy; 2025 EduAssist.com - All Rights Reserved</span>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
