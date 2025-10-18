@@ -3,56 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>EduAssist - AI Teacher Platform</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <!-- Chart.js for progress charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
         <div class="navbar">
-            <span class="logo">EduAssist</span>
+            <span class="logo animate__animated animate__fadeInDown">EduAssist</span>
             <nav>
                 <a href="#dashboard">Dashboard</a>
                 <a href="#ai-assist">AI Tools</a>
                 <a href="#attendance">Attendance</a>
                 <a href="#assignments">Assignments</a>
+                <a href="#progress">Progress</a>
                 <a href="#about">About</a>
             </nav>
         </div>
     </header>
     <main>
-        <section id="dashboard">
+        <section id="dashboard" class="animate__animated animate__fadeIn">
             <h1>Welcome, Teacher 👩‍🏫</h1>
             <h2>Teacher Support Dashboard</h2>
+            <div id="notifications" class="notifications card"></div>
             <div class="card-container">
-                <div class="card premium-shadow">
-                    <h3>AI Lesson Generator</h3>
+                <div class="card premium-shadow animate__animated animate__fadeInUp" data-tilt>
+                    <h3><span class="icon">📚</span> AI Lesson Generator</h3>
                     <input type="text" id="lesson-topic" placeholder="Topic">
                     <button onclick="generateLesson()">Generate</button>
                     <div id="lesson-result"></div>
                 </div>
-                <div class="card premium-shadow">
-                    <h3>AI Quiz Generator</h3>
+                <div class="card premium-shadow animate__animated animate__fadeInUp" data-tilt>
+                    <h3><span class="icon">📝</span> AI Quiz Generator</h3>
                     <input type="text" id="quiz-topic" placeholder="Topic">
                     <button onclick="generateQuiz()">Generate</button>
                     <div id="quiz-result"></div>
                 </div>
-                <div class="card premium-shadow">
-                    <h3>Attendance Marking</h3>
+                <div class="card premium-shadow animate__animated animate__fadeInUp" data-tilt>
+                    <h3><span class="icon">🎓</span> Attendance Marking</h3>
                     <input type="text" id="student-name" placeholder="Student Name">
                     <button onclick="markAttendance()">Mark Present</button>
                     <div id="attendance-list"></div>
                 </div>
-                <div class="card premium-shadow">
-                    <h3>Assignments Portal</h3>
+                <div class="card premium-shadow animate__animated animate__fadeInUp" data-tilt>
+                    <h3><span class="icon">📤</span> Assignments Portal</h3>
                     <input type="text" id="assignment-title" placeholder="Assignment Title">
                     <button onclick="addAssignment()">Add</button>
                     <ul id="assignment-list"></ul>
                 </div>
             </div>
+            <div class="animate__animated animate__fadeIn card" style="margin-top:30px;">
+                <h3><span class="icon">📊</span> Student Progress Chart</h3>
+                <canvas id="progressChart" width="400" height="160"></canvas>
+            </div>
         </section>
         <section id="about">
             <h3>About EduAssist</h3>
             <p>
-                EduAssist is an AI-powered platform that helps teachers with lesson/quiz creation, attendance, assignments, and more. <br>
+                EduAssist is an AI-powered platform that helps teachers create lessons/quizzes, mark attendance, manage assignments, view student progress and more.<br>
                 <b>Founders:</b> Sameer Aryan, Shourya Gupta, Aman Kumar Sharma, Akshay Kataria
             </p>
         </section>
