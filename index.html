@@ -1,77 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>EduAssist - AI Teacher Platform</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-    <!-- Chart.js for progress charts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduAssist — AI-Powered Teaching Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <span class="logo animate__animated animate__fadeInDown">EduAssist</span>
-            <nav>
-                <a href="#dashboard">Dashboard</a>
-                <a href="#ai-assist">AI Tools</a>
-                <a href="#attendance">Attendance</a>
-                <a href="#assignments">Assignments</a>
-                <a href="#progress">Progress</a>
-                <a href="#about">About</a>
-            </nav>
+
+  <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <div style="background-color:rgb(1, 2, 39); color:rgba(235, 151, 6, 0.696);"  class="logo-icon">Ea</div>
+        <span>Edu<span class="logo-accent">Assist</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#ai-tools">AI Tools</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#" class="btn btn-ghost">Log In</a>
+        <a href="#" class="btn btn-primary">Get Started Free</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+
+    <div class="container hero-container">
+      <div class="hero-content" data-animate="fade-up">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Powered by Advanced AI
         </div>
-    </header>
-    <main>
-        <section id="dashboard" class="animate__animated animate__fadeIn">
-            <h1>Welcome, Teacher 👩‍🏫</h1>
-            <h2>Teacher Support Dashboard</h2>
-            <div id="notifications" class="notifications card"></div>
-            <div class="card-container">
-                <div class="card premium-shadow animate__animated animate__fadeInUp" data-tilt>
-                    <h3><span class="icon">📚</span> AI Lesson Generator</h3>
-                    <input type="text" id="lesson-topic" placeholder="Topic">
-                    <button onclick="generateLesson()">Generate</button>
-                    <div id="lesson-result"></div>
-                </div>
-                <div class="card premium-shadow animate__animated animate__fadeInUp" data-tilt>
-                    <h3><span class="icon">📝</span> AI Quiz Generator</h3>
-                    <input type="text" id="quiz-topic" placeholder="Topic">
-                    <button onclick="generateQuiz()">Generate</button>
-                    <div id="quiz-result"></div>
-                </div>
-                <div class="card premium-shadow animate__animated animate__fadeInUp" data-tilt>
-                    <h3><span class="icon">🎓</span> Attendance Marking</h3>
-                    <input type="text" id="student-name" placeholder="Student Name">
-                    <button onclick="markAttendance()">Mark Present</button>
-                    <div id="attendance-list"></div>
-                </div>
-                <div class="card premium-shadow animate__animated animate__fadeInUp" data-tilt>
-                    <h3><span class="icon">📤</span> Assignments Portal</h3>
-                    <input type="text" id="assignment-title" placeholder="Assignment Title">
-                    <button onclick="addAssignment()">Add</button>
-                    <ul id="assignment-list"></ul>
-                </div>
+
+        <h1 class="hero-title">
+          Teach <span class="text-amber">Smarter</span>,<br />
+          Not <span class="text-teal">Harder</span>
+        </h1>
+
+        <p class="hero-desc">
+          EduAssist gives teachers an AI-powered toolkit to generate lesson plans,
+          create quizzes, personalize content for every student, and get more done —
+          in minutes, not hours.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary btn-lg">Start for Free →</a>
+          <a href="#features" class="btn btn-outline btn-lg">Explore Features</a>
+        </div>
+
+        <div class="hero-social-proof">
+          <div class="avatars">
+            <div class="avatar" style="background:#FCD34D;">SP</div>
+            <div class="avatar" style="background:#5EEAD4;">MR</div>
+            <div class="avatar" style="background:#C4B5FD;">AL</div>
+            <div class="avatar" style="background:#FCA5A5;">KJ</div>
+          </div>
+          <span class="proof-text"><strong>50,000+</strong> teachers already saving hours every week</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-animate="fade-left">
+        <div class="floating-card card-main" id="cardMain">
+          <div class="card-header-row">
+            <div class="card-icon icon-amber">📋</div>
+            <div>
+              <div class="card-label">Lesson Plan Generator</div>
+              <div class="card-meta">Grade 7 • Science</div>
             </div>
-            <div class="animate__animated animate__fadeIn card" style="margin-top:30px;">
-                <h3><span class="icon">📊</span> Student Progress Chart</h3>
-                <canvas id="progressChart" width="400" height="160"></canvas>
+            <div class="card-status status-done">✓ Done</div>
+          </div>
+          <div class="card-body-text">
+            Photosynthesis & Plant Biology — 45-min interactive lesson with 3 hands-on activities...
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-bar"><div class="progress-fill fill-amber" style="width:72%"></div></div>
+            <span class="progress-label">72% complete</span>
+          </div>
+          <div class="card-tags">
+            <span class="tag tag-green">Curriculum Aligned</span>
+            <span class="tag tag-amber">Differentiated</span>
+          </div>
+        </div>
+
+        <div class="floating-card card-sub card-sub-1" id="cardSub1">
+          <div class="card-header-row">
+            <div class="card-icon icon-green">📊</div>
+            <div>
+              <div class="card-label">Student Progress</div>
+              <div class="card-meta">28 students tracked</div>
             </div>
-        </section>
-        <section id="about">
-            <h3>About EduAssist</h3>
-            <p>
-                EduAssist is an AI-powered platform that helps teachers create lessons/quizzes, mark attendance, manage assignments, view student progress and more.<br>
-                <b>Founders:</b> Sameer Aryan, Shourya Gupta, Aman Kumar Sharma, Akshay Kataria
-            </p>
-        </section>
-    </main>
-    <footer>
-        <span>&copy; 2025 EduAssist.com - All Rights Reserved</span>
-    </footer>
-    <script src="script.js"></script>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-bar"><div class="progress-fill fill-teal" style="width:85%"></div></div>
+          </div>
+          <div class="mini-stat">Class avg: <strong>85%</strong> <span class="up">↑ 12%</span></div>
+        </div>
+
+        <div class="floating-card card-sub card-sub-2" id="cardSub2">
+          <div class="card-header-row">
+            <div class="card-icon icon-purple">🎯</div>
+            <div>
+              <div class="card-label">Quiz Ready</div>
+              <div class="card-meta">10 questions generated</div>
+            </div>
+          </div>
+          <div class="card-tags">
+            <span class="tag tag-purple">MCQ + Short Ans</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ STATS ═══════════════════════════════ -->
+  <div class="stats-bar">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <div class="stat-number" data-target="50000">0</div>
+        <div class="stat-suffix">K+ Teachers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="2000000">0</div>
+        <div class="stat-suffix">M+ Lessons Generated</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="40">0</div>
+        <div class="stat-suffix">% Less Prep Time</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="49">0</div>
+        <div class="stat-suffix">★ Avg Rating</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ FEATURES ═══════════════════════════════ -->
+  <section class="section features-section" id="features">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="eyebrow">Everything You Need</div>
+        <h2 class="section-title">AI tools built for educators</h2>
+        <p class="section-desc">From lesson planning to student assessments — EduAssist handles the heavy lifting so you can focus on teaching.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card" data-color="amber" data-animate="fade-up" data-delay="0">
+          <div class="feature-icon icon-wrap-amber">📋</div>
+          <h3 class="feature-title">Lesson Plan Generator</h3>
+          <p class="feature-desc">Create comprehensive, curriculum-aligned lesson plans in seconds. Just enter your topic, grade, and duration — AI does the rest.</p>
+          <div class="feature-tags">
+            <span class="tag tag-sm">Curriculum Aligned</span>
+            <span class="tag tag-sm">Any Subject</span>
+          </div>
+        </div>
+
+        <div class="feature-card" data-color="teal" data-animate="fade-up" data-delay="100">
+          <div class="feature-icon icon-wrap-teal">📝</div>
+          <h3 class="feature-title">Quiz & Assessment Builder</h3>
+          <p class="feature-desc">Generate MCQs, short answers, true/false, and essay prompts. Auto-grade and get instant analytics on student performance.</p>
+          <div class="feature-tags">
+            <span class="tag tag-sm">Auto-Grading</span>
+            <span class="tag tag-sm">Analytics</span>
+          </div>
+        </div>
+
+        <div class="feature-card" data-color="purple" data-animate="fade-up" data-delay="200">
+          <div class="feature-icon icon-wrap-purple">🎯</div>
+          <h3 class="feature-title">Personalized Learning Paths</h3>
+          <p class="feature-desc">AI analyzes each student's strengths and gaps, generating individualized content and pacing that matches their level.</p>
+          <div class="feature-tags">
+            <span class="tag tag-sm">Adaptive</span>
+            <span class="tag tag-sm">Per-Student</span>
+          </div>
+        </div>
+
+        <div class="feature-card" data-color="green" data-animate="fade-up" data-delay="0">
+          <div class="feature-icon icon-wrap-green">🤖</div>
+          <h3 class="feature-title">AI Classroom Assistant</h3>
+          <p class="feature-desc">A conversational AI that answers student questions, explains concepts in multiple ways, and never gets tired of "why?" questions.</p>
+          <div class="feature-tags">
+            <span class="tag tag-sm">24/7 Available</span>
+            <span class="tag tag-sm">Multi-Language</span>
+          </div>
+        </div>
+
+        <div class="feature-card" data-color="red" data-animate="fade-up" data-delay="100">
+          <div class="feature-icon icon-wrap-red">📊</div>
+          <h3 class="feature-title">Progress Tracker & Reports</h3>
+          <p class="feature-desc">Real-time dashboards showing individual and class-wide progress. Generate parent-ready reports with one click, automatically.</p>
+          <div class="feature-tags">
+            <span class="tag tag-sm">Parent Reports</span>
+            <span class="tag tag-sm">Visual Insights</span>
+          </div>
+        </div>
+
+        <div class="feature-card" data-color="blue" data-animate="fade-up" data-delay="200">
+          <div class="feature-icon icon-wrap-blue">🔊</div>
+          <h3 class="feature-title">Content Simplifier</h3>
+          <p class="feature-desc">Paste any complex text and instantly get age-appropriate versions, visual summaries, concept maps, and multilingual translations.</p>
+          <div class="feature-tags">
+            <span class="tag tag-sm">Grade-Level Adjust</span>
+            <span class="tag tag-sm">50+ Languages</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ HOW IT WORKS ═══════════════════════════════ -->
+  <section class="section how-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="eyebrow">Simple Process</div>
+        <h2 class="section-title">Up and running in minutes</h2>
+        <p class="section-desc">No complicated setup. No training required. Just start teaching smarter from day one.</p>
+      </div>
+
+      <div class="steps-wrapper">
+        <div class="steps-line"></div>
+        <div class="steps-grid">
+          <div class="step" data-animate="fade-up" data-delay="0">
+            <div class="step-num">1</div>
+            <div class="step-icon">🔐</div>
+            <h3 class="step-title">Create Your Account</h3>
+            <p class="step-desc">Sign up free. Tell EduAssist your subject, grade level, and curriculum standards in 2 minutes.</p>
+          </div>
+          <div class="step" data-animate="fade-up" data-delay="150">
+            <div class="step-num">2</div>
+            <div class="step-icon">👥</div>
+            <h3 class="step-title">Add Your Students</h3>
+            <p class="step-desc">Import from Google Classroom, CSV, or add manually. Connect your class in seconds.</p>
+          </div>
+          <div class="step" data-animate="fade-up" data-delay="300">
+            <div class="step-num">3</div>
+            <div class="step-icon">✨</div>
+            <h3 class="step-title">Generate Content</h3>
+            <p class="step-desc">Ask AI to create lessons, quizzes, activities, and exercises tailored to your class needs.</p>
+          </div>
+          <div class="step" data-animate="fade-up" data-delay="450">
+            <div class="step-num">4</div>
+            <div class="step-icon">📈</div>
+            <h3 class="step-title">Track & Improve</h3>
+            <p class="step-desc">Watch real-time student progress and get AI-powered insights to continuously personalize learning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ AI TOOLS DEMO ═══════════════════════════════ -->
+  <section class="section ai-tools-section" id="ai-tools">
+    <div class="container">
+      <div class="section-header section-header-light" data-animate="fade-up">
+        <div class="eyebrow eyebrow-amber">Interactive AI</div>
+        <h2 class="section-title text-white">See the AI in action</h2>
+        <p class="section-desc text-muted">Every tool is designed around how teachers actually think and work. No prompting expertise needed.</p>
+      </div>
+
+      <div class="tools-layout">
+        <div class="tools-list" id="toolsList">
+          <div class="tool-item active" data-tool="lesson">
+            <span class="tool-emoji">📋</span>
+            <div>
+              <div class="tool-name">Lesson Planner</div>
+              <div class="tool-meta">Generate full lesson plans with activities</div>
+            </div>
+            <span class="tool-arrow">→</span>
+          </div>
+          <div class="tool-item" data-tool="quiz">
+            <span class="tool-emoji">📝</span>
+            <div>
+              <div class="tool-name">Quiz Maker</div>
+              <div class="tool-meta">Auto-generate assessments of any type</div>
+            </div>
+            <span class="tool-arrow">→</span>
+          </div>
+          <div class="tool-item" data-tool="tutor">
+            <span class="tool-emoji">🤖</span>
+            <div>
+              <div class="tool-name">Student AI Tutor</div>
+              <div class="tool-meta">AI that explains concepts to students</div>
+            </div>
+            <span class="tool-arrow">→</span>
+          </div>
+          <div class="tool-item" data-tool="simplify">
+            <span class="tool-emoji">🔊</span>
+            <div>
+              <div class="tool-name">Content Simplifier</div>
+              <div class="tool-meta">Translate complex text to any reading level</div>
+            </div>
+            <span class="tool-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="tool-preview-panel" id="toolPreview">
+          <div class="preview-topbar">
+            <div class="preview-dots">
+              <span class="pdot pdot-red"></span>
+              <span class="pdot pdot-amber"></span>
+              <span class="pdot pdot-green"></span>
+            </div>
+            <span class="preview-title" id="previewTitle">AI Lesson Planner</span>
+          </div>
+          <div class="chat-window" id="chatWindow">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ TESTIMONIALS ═══════════════════════════════ -->
+  <section class="section testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="eyebrow">Teacher Stories</div>
+        <h2 class="section-title">Loved by educators worldwide</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-animate="fade-up" data-delay="0">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"EduAssist has cut my lesson prep time by more than half. I spend that saved time actually connecting with my students. It's been a game-changer for my classroom."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#FCD34D;">SP</div>
+            <div>
+              <div class="author-name">Sunita Patel</div>
+              <div class="author-role">8th Grade Science Teacher, Mumbai</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-animate="fade-up" data-delay="150">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"The personalized learning paths feature is incredible. My struggling students finally get content at their level, and advanced students aren't bored anymore."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#5EEAD4;">MR</div>
+            <div>
+              <div class="author-name">Marcus Rivera</div>
+              <div class="author-role">High School Math Teacher, Texas</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-animate="fade-up" data-delay="300">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Parent reports used to take me an entire Sunday. Now EduAssist generates them in one click and they're more detailed than anything I made manually. Parents love them."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#C4B5FD;">AL</div>
+            <div>
+              <div class="author-name">Amara Lowe</div>
+              <div class="author-role">Primary School Teacher, London</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ PRICING ═══════════════════════════════ -->
+  <section class="section pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="eyebrow">Simple Pricing</div>
+        <h2 class="section-title">Pick your plan</h2>
+        <p class="section-desc">Start free. Upgrade when you're ready. No hidden fees, no contracts.</p>
+      </div>
+
+      <div class="pricing-toggle" id="pricingToggle">
+        <span class="toggle-label active" data-period="monthly">Monthly</span>
+        <button class="toggle-switch" id="toggleSwitch" aria-label="Toggle billing period"></button>
+        <span class="toggle-label" data-period="yearly">Yearly <span class="save-badge">Save 20%</span></span>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card" data-animate="fade-up" data-delay="0">
+          <div class="plan-name">Starter</div>
+          <div class="plan-price"><span class="currency">₹</span><span class="amount" data-monthly="0" data-yearly="0">0</span><span class="period">/mo</span></div>
+          <div class="plan-tagline">Perfect for exploring EduAssist</div>
+          <ul class="plan-features">
+            <li class="feature-yes">5 lesson plans / month</li>
+            <li class="feature-yes">10 quiz generations</li>
+            <li class="feature-yes">Up to 30 students</li>
+            <li class="feature-yes">Basic progress tracking</li>
+            <li class="feature-no">AI Student Tutor</li>
+            <li class="feature-no">Parent reports</li>
+          </ul>
+          <a href="#" class="btn btn-plan-outline">Get Started Free</a>
+        </div>
+
+        <div class="pricing-card pricing-featured" data-animate="fade-up" data-delay="150">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="plan-name">Pro</div>
+          <div class="plan-price"><span class="currency">₹</span><span class="amount" data-monthly="999" data-yearly="799">999</span><span class="period">/mo</span></div>
+          <div class="plan-tagline">For dedicated teachers who want full power</div>
+          <ul class="plan-features">
+            <li class="feature-yes">Unlimited lesson plans</li>
+            <li class="feature-yes">Unlimited quiz generation</li>
+            <li class="feature-yes">Up to 200 students</li>
+            <li class="feature-yes">Advanced analytics</li>
+            <li class="feature-yes">AI Student Tutor</li>
+            <li class="feature-yes">Auto parent reports</li>
+          </ul>
+          <a href="#" class="btn btn-plan-primary">Start Pro Plan</a>
+        </div>
+
+        <div class="pricing-card" data-animate="fade-up" data-delay="300">
+          <div class="plan-name">School</div>
+          <div class="plan-price"><span class="amount">Custom</span></div>
+          <div class="plan-tagline">For entire schools and districts</div>
+          <ul class="plan-features">
+            <li class="feature-yes">Everything in Pro</li>
+            <li class="feature-yes">Unlimited students</li>
+            <li class="feature-yes">Admin dashboard</li>
+            <li class="feature-yes">LMS integrations</li>
+            <li class="feature-yes">Dedicated support</li>
+            <li class="feature-yes">Custom onboarding</li>
+          </ul>
+          <a href="#" class="btn btn-plan-outline">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CTA ═══════════════════════════════ -->
+  <section class="cta-section">
+    <div class="cta-glow"></div>
+    <div class="container cta-inner" data-animate="fade-up">
+      <h2 class="cta-title">Ready to transform your <span class="text-amber">classroom?</span></h2>
+      <p class="cta-desc">Join 50,000+ teachers who spend less time on paperwork and more time on what matters — their students.</p>
+      <div class="cta-actions">
+        <a href="#" class="btn btn-primary btn-lg">Start Free Today →</a>
+        <a href="#" class="btn btn-outline-light btn-lg">Schedule a Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo logo-light">
+          <div class="logo-icon">✏️</div>
+          <span>Edu<span class="logo-accent">Assist</span></span>
+        </a>
+        <p class="footer-desc">AI-powered tools helping teachers create better learning experiences and help every student thrive.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link">𝕏</a>
+          <a href="#" class="social-link">in</a>
+          <a href="#" class="social-link">▶</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Integrations</a></li>
+          <li><a href="#">Changelog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Teacher Blog</a></li>
+          <li><a href="#">Webinars</a></li>
+          <li><a href="#">Templates</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© 2026 EduAssist. All rights reserved.</span>
+        <span>Made with ❤️ By Sameer Aryan</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
